@@ -1,0 +1,13 @@
+{
+  "title": "'Yet Another New Tab Page'",
+  "name": "yantp",
+  "version": "0.0.1",
+  "description": "New tab page extension for firefox",
+  "main": "index.js",
+  "author": "Ramkumar K R",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
+}
