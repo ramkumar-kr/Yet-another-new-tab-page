@@ -1,0 +1,29 @@
+.divider-vertical {
+height: 50px;
+margin: 0 9px 0 2px;
+border-left: 1px solid #A9A9A9;
+border-right: 1px solid #A9A9A9;
+border-radius: 20%;
+}
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+.img-raised{
+	margin:10px 5px;
+	-webkit-box-shadow: 1px 2px 3px #444;
+	-moz-box-shadow: 2px 3px 8px #444;
+	box-shadow: 2px 3px 8px #444;
+}
+.bordered{
+	padding: 1px 1px 1px 1px;
+	border: 1px solid black;
+	border-radius: 1%;
+}
+
+body{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+}
