@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/extras.css">
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/tooltip.js"></script>
     <script type="text/javascript" src="js/storage.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -16,13 +16,15 @@
     <!-- Header -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
-        <div class="pull-right navbar-header">
-          <div class="navbar-brand" id="user_name"></div>
+        <div class="navbar-header pull-left">
+          <ul class="nav navbar-nav ">
+            <li><a href="https://marketplace.firefox.com" class="btn btn-lg" id="marketplace"  data-toggle="tooltip" data-placement="bottom" title="Marketplace"><span class="fa fa-rocket fa-lg"></span></a></li>
+            <li><a href="https://addons.mozilla.org/" class="btn btn-lg" id="extensions" data-toggle="tooltip" data-placement="bottom" title="Add-ons"><span class="fa fa-puzzle-piece fa-lg"></span></a></li>
+          </ul>
         </div>
-        <ul class="nav navbar-nav visible-lg-block visible-md-block">
-          <li><a href="https://marketplace.firefox.com" class="btn btn-lg" id="marketplace"  data-toggle="tooltip" data-placement="bottom" title="Marketplace"><span class="fa fa-rocket fa-lg"></span></a></li>
-          <li><a href="https://addons.mozilla.org/" class="btn btn-lg" id="extensions" data-toggle="tooltip" data-placement="bottom" title="Add-ons"><span class="fa fa-puzzle-piece fa-lg"></span></a></li>
-        </ul>
+        <div class="navbar-header pull-right">
+          <div id="user_name" class="navbar-brand"></div>
+        </div>
       </div>
     </nav>
     <!-- End of Header -->
@@ -33,11 +35,8 @@
     <!-- Footer -->
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="container-fluid">
-        <ul class="nav navbar-nav pull-right visible-lg-block visible-md-block">
+        <ul class="nav navbar-nav pull-right">
           <li><a href="options.html" class="btn btn-lg" data-toggle="tooltip" data-placement="top" title="Customize"><span class="fa fa-wrench fa-lg"></span></a></li>
-        </ul>
-        <ul class="nav navbar-nav visible-lg-block visible-md-block">
-        	<li><a  href="https://www.mozilla.org/" id="mozilla" class="btn btn-lg" data-toggle="tooltip" data-placement="top" title="Mozilla home page"><span class="fa fa-lg fa-medium"></span></a></li>
         </ul>
       </div>
     </nav>

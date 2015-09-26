@@ -1,95 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html manifest="offline.appcache">
 	<head>
 		<meta http-equiv="Cache-control" content="public">
-		<meta charset="UTF-8">
 		<title>Options - New tab page</title>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<script src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/tooltip.js"></script>	
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/options.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/extras.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-inverse" role="navigation">
-			<div class="container">
-				<div class="pull-right navbar-header">
-					<a href="https://www.github.com/ramkumar-kr" target="_blank" class="navbar-brand">Made by Ramkumar</a>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand" data-toggle="tooltip" data-placement="bottom" title="Go to the New Tab Page"><span class="fa fa-lg fa-th-large"></span></a>
 				</div>
-				<div class="pull-left navbar-header">
-					<a href="index.html" class="navbar-brand" data-toggle="tooltip" data-placement="bottom" title="Back"><span class="fa fa-lg fa-arrow-left"></span></a>
+				<div class="navbar-header pull-right">
+					<a href="index.html" class="navbar-brand">Made by Ramkumar K R</a>
 				</div>
 			</div>
 		</nav>
-		<div class="container">
+		<div class="container-fluid">
 
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-1 well well-lg">
-					<div class="page-header">
-						<h1>Name</h1>
-					</div>
-					<form class="form-horizontal" enctype="multipart/form-data" id="edit_name" method="post">
-						<div class="form-group">
-							<div class="col-lg-10 col-lg-offset-1">
-								<input type="text" class="form-control" id="user_name" placeholder="Enter your name" data-placement="bottom" data-toggle="tooltip" title="The name entered here will be shown on top right corner of every new tab" required>
-							</div>
-						</div>
-						<button type="submit" id="addbtn" class="col-lg-6 col-lg-offset-3 btn btn-info btn-lg"><span class="fa fa-lg fa-fw fa-user"></span>&nbsp;&nbsp;Update</button>
-					</form>
-				</div>
-
-				<div class="col-lg-5 col-lg-offset-1 well well-lg">
-					<div class="page-header">
-						<h1>Background image</h1>
-					</div>
-					<form class="form-horizontal" enctype="multipart/form-data" id="background" method="post">
-						<div class="form-group">
-							<div class="col-sm-12">
-								<input type="text" class="form-control" id="image_url" placeholder="Enter the url of the image which is to be set as background" data-placement="bottom" data-toggle="tooltip" title="Only default backgrounds are available offline. To use the default backgounds available, write image background as 'images/backgrounds/file_name'" required>
-							</div>
-						</div>
-						<button type="submit" id="addbtn" class="col-sm-6 col-sm-offset-1  btn btn-primary btn-lg"><span class="fa fa-lg fa-fw fa-image"></span>&nbsp;&nbsp;Update</button>
-						<a href="https://github.com/ramkumar-kr/Yet-another-new-tab-page/tree/master/images/backgrounds" target="_blank" class="col-sm-2 col-sm-offset-2 btn btn-info btn-lg" data-placement="bottom" data-toggle="tooltip" title="Browse backgrounds available offline"><span class="fa fa-lg fa-fw fa-file-image-o"></span></a>
-					</form>
-				</div>
-			</div>
-			<hr>
-
-			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1 well well-lg">
+				<div class="col-lg-3 col-lg-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Customize Layout</h1>
 					</div>
-					<div class="col-lg-10 col-lg-offset-1">
-					<form class="form-horizontal" id = "layout" method="post">
+					<div class="col-lg-10 col-lg-offset-1 ">
+					<form class="form-horizontal" id = "layout_form" method="post">
 						<div class="form-group">
 							<div class="radio">
 								<label>
-									<input type="radio" name="layout_options" id="layout1" value = "col-lg-3 col-md-3 col-sm-3 col-xs-4">
-									4 tiles per row
+									<input type="radio" name="layout_options" id="layout1" value = "col-lg-3 col-md-3 col-sm-6 col-xs-6">
+									Huge Sized Tiles
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="layout_options" id="layout2" value = "col-lg-2 col-md-2 col-sm-3 col-xs-4">
-									6 tiles per row
+									<input type="radio" name="layout_options" id="layout2" value = "col-lg-2 col-md-2 col-sm-4 col-xs-4">
+									Normal Sized Tiles
 								</label>
 							</div>
 							<div class="radio">
 								<label>
-									<input type="radio" name="layout_options" id="layout3" value = "col-lg-1 col-md-1 col-sm-3 col-xs-4">
-									12 tiles per row
+									<input type="radio" name="layout_options" id="layout3" value = "col-lg-1 col-md-1 col-sm-3 col-xs-3">
+									Small Sized Tiles
 								</label>
 							</div>
 						</div>
-						<button type="submit" id="layoutbtn" class="col-sm-4 col-sm-offset-4  btn btn-success btn-lg "><span class="fa fa-lg fa-fw fa-refresh"></span>&nbsp;&nbsp;Update</button>
 					</form>
 					</div>
+					<button type="submit" id="layoutbtn" class="btn btn-success btn-lg btn-block"><span class="fa fa-lg fa-fw fa-refresh"></span>&nbsp;&nbsp;Update</button>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-10 col-lg-offset-1 well well-lg">
+
+				<div class="col-lg-6 col-lg-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Add more tiles</h1>
 					</div>
@@ -97,7 +63,7 @@
 						<div class="form-group">
 							<label for="url" class="col-sm-2 control-label">URL</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="url" placeholder="Enter URL" data-placement="bottom" data-toggle="tooltip" title="Enter url along with protocol (http:// or https://)" required>
+								<input type="text" class="form-control" id="url" placeholder="Enter URL" data-placement="bottom" data-toggle="tooltip" title="URL which is entered should contain protocol (Like http:// or https://)" value="http://" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -112,9 +78,48 @@
 								<input type="text" class="form-control" id="image" placeholder="Enter Image filename as in github repository. Send a request if you the icon doesn't exist" data-placement="bottom" data-toggle="tooltip" title="Enter name of file of image in github repository" value="default.png" required>
 							</div>
 						</div>
-						<button type="reset" class="col-sm-3 col-sm-offset-1 btn btn-warning btn-lg"><span class="fa fa-lg fa-fw fa-repeat"></span>&nbsp;&nbsp;Reset</button>
-						<button type="submit" id="addbtn" class="col-sm-3 col-sm-offset-1  btn btn-success btn-lg"><span class="fa fa-lg fa-fw fa-plus"></span>&nbsp;&nbsp;Add</button>
-						<a href="https://github.com/ramkumar-kr/Yet-another-new-tab-page/tree/master/images" target="_blank" class="col-sm-3 col-sm-offset-1 btn btn-info btn-lg"><span class="fa fa-lg fa-fw fa-file-image-o"></span>&nbsp;&nbsp;Browse Images</a>
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+							<button type="reset" class="btn btn-warning btn-lg btn-block"><span class="fa fa-lg fa-fw fa-repeat"></span>&nbsp;Reset</button>
+						</div>
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+							<button type="submit" id="addbtn" class="btn btn-success btn-lg btn-block"><span class="fa fa-lg fa-fw fa-plus"></span>&nbsp;Add</button>
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<a href="https://github.com/ramkumar-kr/Yet-another-new-tab-page/tree/master/images" target="_blank" class="btn btn-info btn-sm btn-block" data-toggle="popover" data-placement="bottom" data-title="Browse Images" data-content="Browse available icons for the tiles"><span class="fa fa-lg fa-fw fa-file-image-o"></span></a>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<hr>
+
+			<div class="row">
+				<div class="col-lg-4 col-lg-offset-1 well well-lg">
+					<div class="page-header">
+						<h1>Name</h1>
+					</div>
+					<form class="form-horizontal" enctype="multipart/form-data" id="edit_name" method="post">
+						<div class="form-group">
+							<div class="col-lg-10 col-lg-offset-1">
+								<input type="text" class="form-control" id="user_name" placeholder="Enter your name" data-placement="bottom" data-toggle="tooltip" title="The name entered here will be shown on top right corner of every new tab" required>
+							</div>
+						</div>
+						<button type="submit" id="addbtn" class=" btn btn-info btn-lg btn-block"><span class="fa fa-lg fa-fw fa-user"></span>&nbsp;&nbsp;Update</button>
+					</form>
+				</div>
+
+				<div class="col-lg-5 col-lg-offset-1 well well-lg">
+					<div class="page-header">
+						<h1>Background image</h1>
+					</div>
+					<form class="form-horizontal" enctype="multipart/form-data" id="background" method="post">
+						<div class="form-group">
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="image_path" placeholder="Enter the url of the image which is to be set as background" data-placement="bottom" data-toggle="tooltip" title="Only default backgrounds are available offline. To use the default backgounds available, write image background as 'images/backgrounds/file_name'" required>
+							</div>
+						</div>
+						<button type="submit" id="addbtn" class="col-sm-7 col-sm-offset-1  btn btn-primary btn-lg"><span class="fa fa-lg fa-fw fa-image"></span>&nbsp;&nbsp;Update</button>
+						<a href="https://github.com/ramkumar-kr/Yet-another-new-tab-page/tree/master/images/backgrounds" target="_blank" class="col-sm-2 col-sm-offset-2 btn btn-info btn-lg" data-placement="bottom" data-toggle="tooltip" title="Browse backgrounds available offline"><span class="fa fa-lg fa-fw fa-file-image-o"></span></a>
 					</form>
 				</div>
 			</div>
@@ -125,8 +130,8 @@
 						<h1>Delete Tiles</h1>
 					</div>
 					<form class="form-horizontal" id="del" method="post">
-						<div id="all_tiles">
-							<table class="table table-bordered">
+						<div id="all_tiles" class="table-responsive">
+							<table class="table table-bordered table-hover">
 								<thead>
 									<tr><th><span class="fa fa-lg fa-check-square-o"></span></th><th>Name</th><th>URL</th><th>Icon file name</th></tr>
 								</thead>
@@ -134,11 +139,35 @@
 								</tbody>
 							</table>
 						</div>
-						<button type="submit" id="delbtn" class="col-sm-4 col-sm-offset-4  btn btn-danger btn-lg"><span class="fa fa-lg fa-fw fa-trash"></span>&nbsp;&nbsp;Delete</button>
+						<button type="submit" id="delbtn" class="  btn btn-danger btn-lg btn-block"><span class="fa fa-lg fa-fw fa-trash"></span>&nbsp;&nbsp;Delete</button>
 					</form>
+				</div>
+			</div>
+			<hr>
+			<div class="row well well-lg">
+				<div class="col-lg-10 col-lg-offset-1">
+						<div class="page-header">
+							<h1>Manage Your Data</h1>
+						</div>
+						<div class = "page-body">
+							<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+								<button id="export" class = "col-sm-12 btn btn-primary btn-lg"><span class="fa fa-lg fa-fw fa-upload"></span>&nbsp;Export</button>
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6">
+								<form class="form-horizontal" id="import" method="post">
+									<div class="form-group">
+										<textarea id="items" class="form-control" rows="5"></textarea>
+									</div>
+									<button type="submit" id="delbtn" class="btn btn-primary btn-lg btn-block"><span class="fa fa-lg fa-fw fa-download"></span>&nbsp;Import</button>
+								</form>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>
 	</body>
-	
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/tooltip.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/options.js"></script>
 </html>

@@ -45,37 +45,4 @@ $(document).ready(function(){
     }
     $('#speeddial').append(it);
   }
-
-
-
-
-
-/*
-  chrome.storage.sync.get( function(items) {
-    if (!chrome.runtime.error) {
-      var d = items.data;
-      var background_image = items.background;
-      console.log(background_image);
-      $(document.body).css('background-image', 'url("'+ background_image+'")');
-      var name = items.name;
-      var style = items.style;
-      console.log(name);
-      $('#user_name').append(name);
-      console.log(style);
-      var it = '';
-      for (var i = 0; i < d.length; i++) {
-        if(i%12 === 0)
-        {
-          if(i > 0){
-            it+='</div>';
-          }
-          it+='<div class="row">';
-        }
-        it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><img src="'+d[i].image+'"/></a></div>';
-        console.log(d[i].name);
-      }
-      $('#speeddial').append(it);
-    }
-  });
-*/
 });

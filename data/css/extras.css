@@ -3,7 +3,7 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	background-position: center center; 
+	background-position: center center;
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
@@ -18,7 +18,7 @@ body{
 	box-shadow: 2px 3px 8px #444;
 }
 .bordered{
-	padding: 1px 1px 1px 1px;
-	border: 1px solid black;
+	padding: 20px 20px 20px 20px;
+	border: 1px dashed grey;
 	border-radius: 1%;
 }
