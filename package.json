@@ -1,7 +1,7 @@
 {
   "title": "Yet Another New Tab Page",
   "name": "yantp",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A more productive,awesome-looking and user-friendly new tab page",
   "main": "index.js",
   "author": "Ramkumar K R",
