@@ -8,6 +8,10 @@ $(document).ready(function(){
 		var name = localStorage.getItem("user_name");
 		var style = localStorage.getItem("style");
 		var background = localStorage.getItem("background");
+		if (background === "undefined")
+		{
+			background="";
+		}
     var d = JSON.parse(tiles);
 		var it = '';
 		for (var i = 0; i < d.length; i++)

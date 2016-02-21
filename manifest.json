@@ -11,7 +11,9 @@
   "offline_enabled": true,
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "bookmarks",
+    "management"
     ],
   "options_page": "options.html"
 }

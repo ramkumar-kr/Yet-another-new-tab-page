@@ -1,12 +1,10 @@
 $(document).ready(function(){
   if (typeof(Storage) != "undefined") {
     // background image
-    if (localStorage.getItem("background") === null)
-    {
-      localStorage.setItem("background", 'images/backgrounds/background.jpg');
-    }
     var background_image = localStorage.getItem("background");
-    $(document.body).css('background-image', 'url("'+ background_image+'")');
+    if(background_image != "undefined"){
+      $(document.body).css('background-image', 'url("'+ background_image+'")');
+    }
 
     //styles
     if (localStorage.getItem("style") === null)
@@ -41,8 +39,27 @@ $(document).ready(function(){
         it+='<div class="row">';
       }
       it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><img src="'+d[i].image+'"/></a></div>';
-      console.log(d[i].name);
     }
     $('#speeddial').append(it);
+    $('#speeddial').append('<hr/><center><h3><u>Apps</u></h3></center>');
+    it2 = '';
+    chrome.management.getAll(function (apps_and_extensions){
+      for (var i = 0, c = 0; i < apps_and_extensions.length; i++) {
+        if(/app/.test(apps_and_extensions[i].type)){
+          c++;
+          if (c % 12 === 0)
+          {
+            if (c > 0){
+              it2+='</div>'
+            }
+            it2+='<div class="row">';
+          }
+          it2+='<div class="'+style+'"><a href="'+apps_and_extensions[i].appLaunchUrl+'"   id="'+apps_and_extensions[i].name+'" class="thumbnail" title="'+apps_and_extensions[i].name+'"><img src="'+apps_and_extensions[i].icons[0].url+'"/></a></div>';
+        }
+      }
+      $('#speeddial').append(it2);
+    });
+
+
   }
 });
