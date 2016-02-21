@@ -23,3 +23,33 @@ body{
 	border: 1px dashed grey;
 	border-radius: 1%;
 }
+
+a{
+	text-align: center;
+}
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+		text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+.td {
+		padding: 0.4em;
+		max-width: 9.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

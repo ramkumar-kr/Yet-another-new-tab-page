@@ -75,3 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.tabs.update({ url: 'https://chrome.google.com/webstore' });
     });
 });
+
+$(document).ready(function (){
+  $("[id^=app_]").on('click', function () {
+    console.log("-------------");
+    console.log(this);
+    chrome.management.launchApp(this.id)
+  });
+});
