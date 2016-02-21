@@ -50,16 +50,24 @@ $(document).ready(function(){
     var show_bookmarks = localStorage.getItem("show_bookmarks");
 
     if (show_bookmarks === 'true') {
-      var it3 = '<div class="row"><ul class="list-group">';
+      var it3 = '';
       chrome.bookmarks.getChildren("1", function(bookmarks){
         $('#speeddial').append('<br/><hr/><center><h3><u>Bookmarks</u></h3></center>');
-        for (var i = 0; i < bookmarks.length; i++) {
+        for (var i = 0, c = 0; i < bookmarks.length; i++) {
+          if(c % 6 === 0)
+          {
+            if(c > 0){
+              it3+='</div><div class="col-lg-12">';
+            }
+            it3+='<div class="row"><div class="col-lg-12">';
+          }
           if (bookmarks[i].url != null && bookmarks[i].url.substring(0,4) == "http") {
+            c++;
             url = new URL(bookmarks[i].url);
             it3+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><object width="32" height="32" data="'+url.origin+'/favicon.ico'+'"><img width="35" height="35" src = "images/default.png"/></object></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
           }
         }
-        it3+="</div>";
+        // it3+="</div></ul>";
         $('#speeddial').append(it3 + "</div>");
       });
     }
@@ -73,19 +81,27 @@ $(document).ready(function(){
     var show_apps = localStorage.getItem("show_apps");
 
     if (show_apps === 'true') {
-      var it2 = '<div class="row">';
+      var it2 = '';
       chrome.management.getAll(function (apps_and_extensions){
         console.log(apps_and_extensions);
         $('#speeddial').append('<br/><hr/><center><h3><u>Apps</u></h3></center>');
         for (var i = 0, c = 0; i < apps_and_extensions.length; i++) {
+          if(c % 6 === 0)
+          {
+            if(c > 0){
+              it2+='</div><div class="col-lg-12">';
+            }
+            it2+='<div class="row"><div class="col-lg-12">';
+          }
           if(/app/.test(apps_and_extensions[i].type)){
-            image_128_url = '';
+            c++;
+            image_url = '';
             for (var img in apps_and_extensions[i].icons) {
-              if(apps_and_extensions[i].icons[img].size == 128){
-                image_128_url = apps_and_extensions[i].icons[img].url
+              if(apps_and_extensions[i].icons[img].size >= 32){
+                image_url = apps_and_extensions[i].icons[img].url
               }
             }
-            it2+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="" id= "app_'+apps_and_extensions[i].id+'" class="thumbnail" data="'+apps_and_extensions[i].id+'" title="'+apps_and_extensions[i].name+'"><img src="'+image_128_url+'"/></a></div>';
+            it2+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="" id= "app_'+apps_and_extensions[i].id+'" class="thumbnail" title="'+apps_and_extensions[i].name+'"><table><tr><td class="td"><img width="32" height="32" src = "'+image_url+'"/></td><td class="td">'+apps_and_extensions[i].name+'</td></tr></table></a></div>';
 
           }
         }
