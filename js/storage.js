@@ -61,7 +61,7 @@ $(document).ready(function(){
             }
             it3+='<div class="row"><div class="col-lg-12">';
           }
-          if (bookmarks[i].url != null && bookmarks[i].url.substring(0,4) == "http") {
+          if (bookmarks[i].url != null && (bookmarks[i].url.substring(0,4) == "http" || bookmarks[i].url.substring(0,6) == "chrome")) {
             c++;
             url = new URL(bookmarks[i].url);
             it3+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><object width="32" height="32" data="'+url.origin+'/favicon.ico'+'"><img width="35" height="35" src = "images/default.png"/></object></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
