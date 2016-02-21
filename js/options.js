@@ -23,7 +23,8 @@ $(document).ready(function(){
 		$('#user_name').val(name);
 		$('#image_path').val(background);
 		$(":radio[name='layout_options'][value='"+style+"']").attr('checked', 'checked');
-
+		$('#apps').attr('checked', (localStorage.getItem("show_apps")=== 'true'));
+		$('#bookmarks').attr('checked', (localStorage.getItem("show_bookmarks") === 'true'));
 
 $('#layoutbtn').on('click',function(data){
   var str = $(":radio[name=layout_options]:checked").val();
@@ -111,5 +112,15 @@ $('#import').on('submit', function(data){
 	{
 		alert("Import Unsuccessful");
 	}
+});
+
+$('#apps').on('click', function(){
+	localStorage.setItem('show_apps', this.checked);
+	console.log(this);
+	console.log(this.checked);
+});
+
+$('#bookmarks').on('click', function(){
+	localStorage.setItem('show_bookmarks', this.checked);
 });
 });
