@@ -45,7 +45,11 @@ $('#background').on('submit',function(data){
 $('#add').on('submit',function(data){
   var url1 = $('#url').val();
   var name1 = $('#name').val();
-  var image1 = 'images/'+$('#image').val();
+  var image1 = $('#image').val();
+	if (image1 == null )
+	{
+		image1 = "images/default.png";
+	}
   //obtain data from storage
   var tiles = localStorage.getItem('tiles');
   var d = JSON.parse(tiles);

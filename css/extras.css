@@ -48,7 +48,8 @@ a:active {
 }
 .td {
 		padding: 0.4em;
-		max-width: 9.9em;
+		max-width: 9.3em;
+		/* Need to make this pick dynamically */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

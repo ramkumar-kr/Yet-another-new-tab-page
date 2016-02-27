@@ -3,6 +3,10 @@ $(document).ready(function(){
     // background image
     var background_image = localStorage.getItem("background");
     if(background_image != "undefined"){
+      if(/^images/.test(background_image))
+      {
+        background_image = "https://yet-another-new-tab-page.appspot.com/" + background_image;
+      }
       $(document.body).css('background-image', 'url("'+ background_image+'")');
     }
 
@@ -38,7 +42,8 @@ $(document).ready(function(){
         }
         it+='<div class="row">';
       }
-      it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><img src="'+d[i].image+'"/></a></div>';
+      d[i].image = "https://yet-another-new-tab-page.appspot.com/"+d[i].image;
+      it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><object width="100%" height="100%" data="'+d[i].image+'"><img width="100%" height="100%" src = "images/default.png"/></object></a></div>';
     }
     $('#speeddial').append(it);
 
@@ -52,7 +57,7 @@ $(document).ready(function(){
     if (show_bookmarks === 'true') {
       var it3 = '';
       chrome.bookmarks.getChildren("1", function(bookmarks){
-        $('#speeddial').append('<br/><hr/><center><h3><u>Bookmarks</u></h3></center>');
+        $('#speeddial').append('<center><h3><u>Bookmarks</u></h3></center>');
         for (var i = 0, c = 0; i < bookmarks.length; i++) {
           if(c % 6 === 0)
           {
@@ -64,7 +69,7 @@ $(document).ready(function(){
           if (bookmarks[i].url != null && (bookmarks[i].url.substring(0,4) == "http" || bookmarks[i].url.substring(0,6) == "chrome")) {
             c++;
             url = new URL(bookmarks[i].url);
-            it3+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><object width="32" height="32" data="'+url.origin+'/favicon.ico'+'"><img width="35" height="35" src = "images/default.png"/></object></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
+            it3+='<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><object width="32" height="32" data="'+url.origin+'/favicon.ico'+'"><img width="35" height="35" src = "images/default.png"/></object></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
           }
         }
         // it3+="</div></ul>";
@@ -84,7 +89,7 @@ $(document).ready(function(){
       var it2 = '';
       chrome.management.getAll(function (apps_and_extensions){
         console.log(apps_and_extensions);
-        $('#speeddial').append('<br/><hr/><center><h3><u>Apps</u></h3></center>');
+        $('#speeddial').append('<hr/><center><h3><u>Apps</u></h3></center>');
         for (var i = 0, c = 0; i < apps_and_extensions.length; i++) {
           if(c % 6 === 0)
           {
@@ -101,7 +106,7 @@ $(document).ready(function(){
                 image_url = apps_and_extensions[i].icons[img].url
               }
             }
-            it2+='<div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="" id= "app_'+apps_and_extensions[i].id+'" class="thumbnail" title="'+apps_and_extensions[i].name+'"><table><tr><td class="td"><img width="32" height="32" src = "'+image_url+'"/></td><td class="td">'+apps_and_extensions[i].name+'</td></tr></table></a></div>';
+            it2+='<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2"><a href="" id= "app_'+apps_and_extensions[i].id+'" class="thumbnail" title="'+apps_and_extensions[i].name+'"><table><tr><td class="td"><img width="32" height="32" src = "'+image_url+'"/></td><td class="td">'+apps_and_extensions[i].name+'</td></tr></table></a></div>';
 
           }
         }
