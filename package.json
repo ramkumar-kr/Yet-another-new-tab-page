@@ -1,6 +1,6 @@
 {
-  "title": "New Tab",
-  "name": "ntp",
+  "title": "Yet Another New Tab Page",
+  "name": "yantp",
   "version": "0.0.9",
   "description": "A more productive,awesome-looking and user-friendly new tab page",
   "main": "index.js",
