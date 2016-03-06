@@ -1,12 +1,14 @@
 $(document).ready(function(){
   if (typeof(Storage) != "undefined") {
     // background image
-    if (localStorage.getItem("background") === null)
-    {
-      localStorage.setItem("background", 'images/backgrounds/background.jpg');
+    var background_image = localStorage.getItem("image");
+    if(background_image != "undefined"){
+      if(/^images/.test(background_image))
+      {
+        background_image = "https://yet-another-new-tab-page.appspot.com/" + background_image;
+      }
+      $(document.body).css('background-image', 'url("'+ background_image+'")');
     }
-    var background_image = localStorage.getItem("background");
-    $(document.body).css('background-image', 'url("'+ background_image+'")');
 
     //styles
     if (localStorage.getItem("style") === null)
@@ -31,6 +33,10 @@ $(document).ready(function(){
     }
     var tiles = localStorage.getItem("tiles");
     var d = JSON.parse(tiles);
+    if(d.length === 0){
+      localStorage.setItem("popup_shown", "yes");
+      $("#dialog_start").show();
+    }
     var it = '';
     for (var i = 0; i < d.length; i++) {
       if(i%12 === 0)
@@ -40,8 +46,8 @@ $(document).ready(function(){
         }
         it+='<div class="row">';
       }
-      it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><img src="'+d[i].image+'"/></a></div>';
-      console.log(d[i].name);
+      d[i].image = "https://yet-another-new-tab-page.appspot.com/"+d[i].image;
+      it+='<div class="'+style+'"><a href="'+d[i].url+'" id="'+d[i].name+'" class="thumbnail" title="'+d[i].name+'"><object width="100%" height="100%" data="'+d[i].image+'"><img width="100%" height="100%" src = "images/default.png"/></object></a></div>';
     }
     $('#speeddial').append(it);
   }
