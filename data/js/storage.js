@@ -33,10 +33,6 @@ $(document).ready(function(){
     }
     var tiles = localStorage.getItem("tiles");
     var d = JSON.parse(tiles);
-    if(d.length === 0){
-      localStorage.setItem("popup_shown", "yes");
-      $("#dialog_start").show();
-    }
     var it = '';
     for (var i = 0; i < d.length; i++) {
       if(i%12 === 0)

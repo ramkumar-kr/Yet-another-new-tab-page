@@ -24,7 +24,7 @@
 		<div class="container-fluid">
 
 			<div class="row">
-				<div class="col-lg-3 col-lg-offset-1 well well-lg">
+				<div class="col-sm-4 col-md-3 col-sm-offset-1 col-md-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Customize Layout</h1>
 					</div>
@@ -55,7 +55,7 @@
 					<button type="submit" id="layoutbtn" class="btn btn-success btn-lg btn-block"><span class="fa fa-lg fa-fw fa-refresh"></span>&nbsp;&nbsp;Update</button>
 				</div>
 
-				<div class="col-lg-6 col-lg-offset-1 well well-lg">
+				<div class="col-sm-5 col-md-6 col-sm-offset-1 col-md-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Add more tiles</h1>
 					</div>
@@ -94,7 +94,7 @@
 			<hr>
 
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-1 well well-lg">
+				<div class="col-sm-4 col-md-3 col-sm-offset-1 col-md-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Name</h1>
 					</div>
@@ -108,7 +108,7 @@
 					</form>
 				</div>
 
-				<div class="col-lg-5 col-lg-offset-1 well well-lg">
+				<div class="col-sm-5 col-md-6 col-sm-offset-1 col-md-offset-1 well well-lg">
 					<div class="page-header">
 						<h1>Background image</h1>
 					</div>
@@ -144,16 +144,16 @@
 				</div>
 			</div>
 			<hr>
-			<div class="row well well-lg">
-				<div class="col-lg-10 col-lg-offset-1">
+			<div class="row">
+				<div class="col-md-5 col-md-offset-1 well well-lg">
 						<div class="page-header">
 							<h1>Manage Your Data</h1>
 						</div>
 						<div class = "page-body">
-							<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+							<div class="col-lg-5 col-md-3 col-sm-4 col-xs-6">
 								<button id="export" class = "col-sm-12 btn btn-primary btn-lg"><span class="fa fa-lg fa-fw fa-upload"></span>&nbsp;Export</button>
 							</div>
-							<div class="col-lg-9 col-md-9 col-sm-8 col-xs-6">
+							<div class="col-lg-7 col-md-6 col-sm-6 col-xs-6">
 								<form class="form-horizontal" id="import" method="post">
 									<div class="form-group">
 										<textarea id="items" class="form-control" rows="5"></textarea>
@@ -163,7 +163,20 @@
 							</div>
 						</div>
 				</div>
+				<div class="col-md-4 col-md-offset-1 well well-lg">
+					<div class="page-header">
+						<h1>Bookmarks</h1>
+					</div>
+					<form class="form-horizontal" enctype="multipart/form-data" id="apps_and_bookmarks" method="post">
+						<div class="checkbox">
+					    <label>
+					      <input type="checkbox" id="bookmarks" name="bookmarks"> Show Bookmarks
+					    </label>
+					  </div>
+					</form>
+				</div>
 			</div>
+			<hr>
 		</div>
 	</body>
 	<script src="js/jquery-1.11.3.min.js"></script>

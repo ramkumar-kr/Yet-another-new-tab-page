@@ -1,8 +1,9 @@
+
 body{
 	background-repeat: no-repeat;
-	background-color: lightgrey;
 	background-attachment: fixed;
 	background-size: cover;
+	background-color: lightgrey;
 	background-position: center center;
 	padding-top: 70px;
 	padding-bottom: 70px;
@@ -21,4 +22,35 @@ body{
 	padding: 20px 20px 20px 20px;
 	border: 1px dashed grey;
 	border-radius: 1%;
+}
+
+a{
+	text-align: center;
+}
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+		text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+.td {
+		padding: 0.4em;
+		max-width: 9.5em;
+		/* Need to make this pick dynamically */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
