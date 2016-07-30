@@ -53,6 +53,7 @@ $('#add').on('submit',function(data){
   //obtain data from storage
   var tiles = localStorage.getItem('tiles');
   var d = JSON.parse(tiles);
+  alert('Tiles feature is deprecated and will be removed in the next version');
   d.push( { url : url1 , name : name1, image : image1 });
   localStorage.setItem('tiles',JSON.stringify(d));
 });

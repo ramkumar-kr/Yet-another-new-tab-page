@@ -34,6 +34,9 @@ $(document).ready(function(){
     var tiles = localStorage.getItem("tiles");
     var d = JSON.parse(tiles);
     var it = '';
+    if (d.length > 0){
+      it += '<div class="alert alert-warning"><b><i>Tiles are going away in the next version. Please move your tiles to bookmarks. For more details please refer to the version change log</b></i></div>'
+    }
     for (var i = 0; i < d.length; i++) {
       if(i%12 === 0)
       {
@@ -69,7 +72,7 @@ $(document).ready(function(){
           if (bookmarks[i].url != null && (bookmarks[i].url.substring(0,4) == "http" || bookmarks[i].url.substring(0,6) == "chrome")) {
             c++;
             url = new URL(bookmarks[i].url);
-            it3+='<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><object width="32" height="32" data="'+url.origin+'/favicon.ico'+'"><img width="35" height="35" src = "images/default.png"/></object></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
+            it3+='<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><img width=32px height=32px src="chrome://favicon/'+bookmarks[i].url+'"></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
           }
         }
         // it3+="</div></ul>";
