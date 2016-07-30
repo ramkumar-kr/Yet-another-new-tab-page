@@ -8,10 +8,11 @@ $(document).ready(function(){
 		var name = localStorage.getItem("user_name");
 		var style = localStorage.getItem("style");
 		var background = localStorage.getItem("background");
-		if (background === "undefined")
-		{
-			background="";
-		}
+		// if (background === '' || background == null)
+		// {
+		// 	// background="https://source.unsplash.com/category/nature/800x600";
+    //   // localStorage.setItem("background", background);
+		// }
     var d = JSON.parse(tiles);
 		var it = '';
 		for (var i = 0; i < d.length; i++)

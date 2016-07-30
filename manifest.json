@@ -12,7 +12,8 @@
     "chrome://favicon/",
     "storage",
     "bookmarks",
-    "management"
+    "management",
+    "chrome://favicon/"
     ],
   "options_page": "options.html"
 }

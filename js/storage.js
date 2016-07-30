@@ -2,12 +2,16 @@ $(document).ready(function(){
   if (typeof(Storage) != "undefined") {
     // background image
     var background_image = localStorage.getItem("background");
-    if(background_image != "undefined"){
+    if(background_image != ""){
       if(/^images/.test(background_image))
       {
         background_image = "https://yet-another-new-tab-page.appspot.com/" + background_image;
       }
       $(document.body).css('background-image', 'url("'+ background_image+'")');
+    }
+    else{
+      	background="https://source.unsplash.com/random";
+      localStorage.setItem("background", background);
     }
 
     //styles
@@ -59,25 +63,12 @@ $(document).ready(function(){
 
     if (show_bookmarks === 'true') {
       var it3 = '';
-      chrome.bookmarks.getChildren("1", function(bookmarks){
-        $('#speeddial').append('<center><h3><u>Bookmarks</u></h3></center>');
-        for (var i = 0, c = 0; i < bookmarks.length; i++) {
-          if(c % 6 === 0)
-          {
-            if(c > 0){
-              it3+='</div><div class="col-lg-12">';
-            }
-            it3+='<div class="row"><div class="col-lg-12">';
-          }
-          if (bookmarks[i].url != null && (bookmarks[i].url.substring(0,4) == "http" || bookmarks[i].url.substring(0,6) == "chrome")) {
-            c++;
-            url = new URL(bookmarks[i].url);
-            it3+='<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2"><a href="'+bookmarks[i].url+'" id="'+bookmarks[i].title+'" class="thumbnail" title="'+bookmarks[i].title+'"><table><tr><td class="td"><img width=32px height=32px src="chrome://favicon/'+bookmarks[i].url+'"></td><td class="td">'+bookmarks[i].title+'</td></tr></table></a></div>';
-          }
-        }
+      chrome.bookmarks.getSubTree('1', function(bookmarks){
+        var output = "<ul class=''>" + display_tree(bookmarks) + "</ul>";
+        document.body.innerHTML = output;
+        });
         // it3+="</div></ul>";
-        $('#speeddial').append(it3 + "</div>");
-      });
+      $('#speeddial').append(it3 + "</div>");
     }
 
 
@@ -124,3 +115,6 @@ $(document).on('click', "[id^=app_]", function () {
   chrome.management.launchApp(this.id.split("_")[1]);
   window.close();
 });
+
+
+

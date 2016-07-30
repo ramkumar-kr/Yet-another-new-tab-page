@@ -8,9 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="css/extras.css">
 		<script src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/tooltip.js"></script>
-		<script type="text/javascript" src="js/internal_apps.js"></script>
+		<!--<script type="text/javascript" src="js/internal_apps.js"></script>-->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/storage.js"></script>
+		<script type="text/javascript" src="js/all.js"></script>
 	</head>
 	<body>
 		<!-- Header -->
@@ -20,16 +20,20 @@
 					<div class="navbar-brand" id="user_name"></div>
 				</div>
 				<ul class="nav navbar-nav visible-lg-block visible-md-block">
-					<li><a href="chrome://apps" class="btn btn-lg" id="apps" data-toggle="tooltip" data-placement="bottom" title="Apps"><span class="fa fa-th fa-lg"></span></a></li>
-					<li><a href="chrome://bookmarks" class="btn btn-lg" id="bookmarks" data-toggle="tooltip" data-placement="bottom" title="Bookmarks"><span class="fa fa-bookmark fa-lg"></span></a></li>
-					<li><a href="chrome://history" class="btn btn-lg" id="history" data-toggle="tooltip" data-placement="bottom" title="History"><span class="fa fa-history fa-lg"></span></a></li>
-					<li><a href="chrome://downloads" class="btn btn-lg" id="downloads" data-toggle="tooltip" data-placement="bottom" title="Downloads"><span class="fa fa-download fa-lg"></span></a></li>
+					<li><a href="chrome://apps" class="btn btn-lg chrome_url" id="apps" data-toggle="tooltip" data-placement="bottom" title="Apps"><span class="fa fa-th fa-lg"></span></a></li>
+					<li><a href="chrome://bookmarks" class="btn btn-lg chrome_url" id="bookmarks" data-toggle="tooltip" data-placement="bottom" title="Bookmarks"><span class="fa fa-bookmark fa-lg"></span></a></li>
+					<li><a href="chrome://history" class="btn btn-lg chrome_url" id="history" data-toggle="tooltip" data-placement="bottom" title="History"><span class="fa fa-history fa-lg"></span></a></li>
+					<li><a href="chrome://downloads" class="btn btn-lg chrome_url" id="downloads" data-toggle="tooltip" data-placement="bottom" title="Downloads"><span class="fa fa-download fa-lg"></span></a></li>
 				</ul>
 			</div>
 		</nav>
 		<!-- End of Header -->
 		<!-- Speed Dial -->
 		<div class="container-fluid" id="speeddial">
+			<div class="row">
+				<div id="dial_bookmarks"></div>
+				<div id="dial_apps"></div>
+			</div>
 		</div>
 		<!-- End of Speed dial -->
 		<!-- Footer -->
@@ -40,14 +44,14 @@
 					<li><a href="options.html" class="btn btn-lg" data-toggle="tooltip" data-placement="top" title="Customize"><span class="fa fa-wrench fa-lg"></span></a></li>
 				</ul>
 				<ul class="nav navbar-nav visible-lg-block ">
-					<li><a href="chrome://extensions" class="btn btn-lg" id="extensions" data-toggle="tooltip" data-placement="top" title="Extensions"><span class="fa fa-puzzle-piece fa-lg"></span></a></li>
-					<li><a href="chrome://settings" class="btn btn-lg" id="settings" data-toggle="tooltip" data-placement="top" title="Settings"><span class="fa fa-cog fa-spin fa-lg"></span></a></li>
-					<li><a href="chrome://inspect" class="btn btn-lg" id="inspector" data-toggle="tooltip" data-placement="top" title="Inspector"><span class="fa fa-eye fa-lg"></span></a></li>
-					<li><a href="chrome://profiler" class="btn btn-lg" id="profiler" data-toggle="tooltip" data-placement="top" title="Profiler"><span class="fa fa-clock-o fa-lg"></span></a></li>
-					<li><a href="chrome://plugins" class="btn btn-lg" id="plugins" data-toggle="tooltip" data-placement="top" title="Plugins"><span class="fa fa-plug fa-lg"></span></a></li>
-					<li><a href="chrome://flags" class="btn btn-lg" id="flags" data-toggle="tooltip" data-placement="top" title="Flags"><span class="fa fa-flag fa-lg"></span></a></li>
-					<li><a href="chrome://version" class="btn btn-lg" id="about" data-toggle="tooltip" data-placement="top" title="About"><span class="fa fa-info-circle fa-lg"></span></a></li>
-					<li><a href="chrome://chrome-urls" class="btn btn-lg" id="urls" data-toggle="tooltip" data-placement="top" title="Other Internal URLs"><span class="fa fa-link fa-spin fa-lg"></span></a></li>
+					<li><a href="chrome://extensions" class="btn btn-lg chrome_url" id="extensions" data-toggle="tooltip" data-placement="top" title="Extensions"><span class="fa fa-puzzle-piece fa-lg"></span></a></li>
+					<li><a href="chrome://settings" class="btn btn-lg chrome_url" id="settings" data-toggle="tooltip" data-placement="top" title="Settings"><span class="fa fa-cog fa-spin fa-lg"></span></a></li>
+					<li><a href="chrome://inspect" class="btn btn-lg chrome_url" id="inspector" data-toggle="tooltip" data-placement="top" title="Inspector"><span class="fa fa-eye fa-lg"></span></a></li>
+					<li><a href="chrome://profiler" class="btn btn-lg chrome_url" id="profiler" data-toggle="tooltip" data-placement="top" title="Profiler"><span class="fa fa-clock-o fa-lg"></span></a></li>
+					<li><a href="chrome://plugins" class="btn btn-lg chrome_url" id="plugins" data-toggle="tooltip" data-placement="top" title="Plugins"><span class="fa fa-plug fa-lg"></span></a></li>
+					<li><a href="chrome://flags" class="btn btn-lg chrome_url" id="flags" data-toggle="tooltip" data-placement="top" title="Flags"><span class="fa fa-flag fa-lg"></span></a></li>
+					<li><a href="chrome://version" class="btn btn-lg chrome_url" id="about" data-toggle="tooltip" data-placement="top" title="About"><span class="fa fa-info-circle fa-lg"></span></a></li>
+					<li><a href="chrome://chrome-urls" class="btn btn-lg chrome_url" id="urls" data-toggle="tooltip" data-placement="top" title="Other Internal URLs"><span class="fa fa-link fa-spin fa-lg"></span></a></li>
 				</ul>
 			</div>
 		</nav>
